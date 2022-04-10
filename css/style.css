@@ -1,8 +1,5 @@
-/* -------------------------------- 
 
-Primary style
 
--------------------------------- */
 *, *::after, *::before {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -15,8 +12,8 @@ html {
 body {
   font-size: 1.6rem;
   font-family: "Open Sans", sans-serif;
-  color: #2c343b;
-  background-color: #f2f2f2;
+  color: #006bb3;
+  background-color: #ffffff;
 }
 
 a {
@@ -28,12 +25,6 @@ img, video {
   max-width: 100%;
 }
 
-/* -------------------------------- 
-
-Hero Slider - by CodyHouse.co
-
--------------------------------- */
-/* Main Header */
 .cd-header {
   position: absolute;
   z-index: 2;
@@ -41,7 +32,7 @@ Hero Slider - by CodyHouse.co
   left: 0;
   width: 100%;
   height: 50px;
-  background-color: #21272c;
+  background-color:#006bb3 ;
 }
 
 @media only screen and (min-width: 768px) {
@@ -54,6 +45,8 @@ Hero Slider - by CodyHouse.co
 .cd-header__logo {
   float: left;
   margin: 13px 0 0 5%;
+  width: 3%;
+  height: 3%;
 }
 
 .cd-header__logo img {
@@ -98,9 +91,9 @@ Hero Slider - by CodyHouse.co
   height: 50px;
   line-height: 50px;
   padding-left: 5%;
-  background: #21272c;
-  border-top: 1px solid #333c44;
-  color: #ffffff;
+  background: #006bb3;
+  border-top: 1px solid #71bdff;
+  color: #130061;
 }
 
 @media only screen and (min-width: 768px) {
@@ -209,26 +202,26 @@ Hero Slider - by CodyHouse.co
 }
 
 .cd-hero__slide:first-of-type {
-  background-color: #2c343b;
+  background-color: #006bb3;
 }
 
 .cd-hero__slide:nth-of-type(2) {
-  background-color: #3d4952;
-  background-image: url("../assets/tech-1-mobile.jpg");
+  background-color: #006bb3;
+  background-image: url(../assets/tech-1-mobile.jpg);
 }
 
 .cd-hero__slide:nth-of-type(3) {
-  background-color: #586775;
-  background-image: url("../assets/tech-2-mobile.jpg");
+  background-color: #006bb3;
+  background-image: url(../assets/tech-2-mobile.jpg);
 }
 
 .cd-hero__slide:nth-of-type(4) {
-  background-color: #2c343b;
-  background-image: url("../assets/video-replace-mobile.jpg");
+  background-color: #006bb3;
+  background-image: url(../assets/video-replace-mobile.jpg);
 }
 
 .cd-hero__slide:nth-of-type(5) {
-  background-color: #2c343b;
+  background-color: #006bb3;
   background-image: url(../assets/img.jpg);
 }
 
@@ -670,9 +663,8 @@ Hero Slider - by CodyHouse.co
 
 /* Main Content */
 .cd-main-content {
-  width: 90%;
-  max-width: 768px;
-  margin: 0 auto;
+  width: 100%;
+   margin: 0 auto;
   padding: 2em 0;
 }
 
@@ -704,3 +696,182 @@ Hero Slider - by CodyHouse.co
 .no-js .cd-hero__nav {
   display: none;
 }
+.mottohead{
+  font-size: 270%;
+  font-weight: bold;
+  text-align: center;
+  color: #013a73;
+  font-family: 'Roboto Slab', serif;
+}
+.Featured{
+    width: 100%;
+    background-color: #ABE2FF;
+}
+
+.FeaturedHeading
+{
+  font-size: 40px;
+  margin-bottom: 4rem;
+  font-size: 270%;
+  font-weight: bold;
+  text-align: center;
+  color: #013a73;
+  font-family: 'Roboto Slab', serif;
+
+}
+.ReasonList
+{
+  
+  justify-content: center;
+  color:#60B5E1;
+  margin-left:5%;
+  margin-right: 5%;
+  padding-bottom: 3rem;
+}
+.iconReason
+{
+  background-color: rgb(0, 66, 128);
+  color: #60B5E1;
+  font-size: 35px;
+  width:60px;
+  height:60px;
+  border-radius: 50%;
+  border:transparent;
+  text-align: center;
+  padding-top:12px;
+ 
+}
+.ReasonEach
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+ 
+}
+.headingReason
+{
+  font-size: 15px;
+  letter-spacing: 2px;
+  font-weight: bolder;
+  font-family: 'Balsamiq Sans', cursive;
+  color: #60B5E1;
+  margin-top:1rem;
+  text-align: center;
+
+}
+.textReason
+{
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  letter-spacing: 1px;
+  color:rgb(0, 66, 128);
+  margin-top: 2rem;
+  text-align: center;
+  margin-bottom: 3%;
+
+}
+
+.ReasonEach:hover
+{
+ 
+  cursor:pointer;
+  font-weight: bolder;
+}
+
+
+@media (max-width:750px)
+{
+    .Featured{
+        padding-top: 10%;
+        padding-bottom: 10%;
+    }
+    
+    .ReasonList{
+        display: flex;
+        flex-direction: column;
+    }
+   
+   
+ }
+@media(min-width:750px)
+{
+    .Featured{
+        padding-top: 7%;
+        padding-bottom: 7%;
+    }
+   .ReasonList{
+        display: flex;
+        flex-direction: row;
+    }
+    .ReasonEach{
+        margin-right: 3%;
+    }
+}
+.mottoexplain
+{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.5;
+  padding-left: 10%;
+  padding-right: 10%;
+  text-align: center;
+  margin-top: 3%;
+  margin-bottom: 4%;
+}
+@media(min-width:800px){
+  .vismis{
+    display: flex;
+    flex-direction: row;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+  
+  }
+  .visdiv,.misdiv{
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+    align-items: center;
+    width: 50%;
+  }
+  .vistitle,.mistitle{
+    font-size: 200%;
+    font-weight: bold;
+    text-align: center;
+    color: #013a73;
+    font-family: 'Roboto Slab', serif;
+  }
+  
+}
+@media(max-width:800px)
+{
+  .vismis{
+    display: flex;
+    flex-direction: column;
+   justify-content: center;
+   align-items: center;
+  
+  }
+  .visdiv,.misdiv{
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+  }
+  .vistitle,.mistitle{
+    font-size: 200%;
+    font-weight: bold;
+    text-align: center;
+    color: #013a73;
+    font-family: 'Roboto Slab', serif;
+  }
+  .vistext,.mistext{
+    text-align: center;
+  }
+}
+
