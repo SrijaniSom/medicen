@@ -1,0 +1,97 @@
+*{
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+}
+
+.appdet
+{
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+}
+.fr,.sr,.tr,.fourthr,.sixthr{width: 100%;
+margin-bottom: 2%;
+
+}
+.category
+{
+    font-family: 'Roboto Slab', serif;
+    font-size: 130%;
+    font-weight: 800;
+    color:#013a73; 
+    line-height: 1.5;
+       
+}
+.frt,.srt,.trt
+{
+    width: 45%;
+    padding-bottom:3%;
+    padding-left:1%;
+    border-radius: 6px ;
+    color:#02304f;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    font-size: large;
+    padding-top: 6px;
+    margin-right: 3px;
+   }
+   
+   
+.fourt{
+    width:91%;
+    padding-bottom:3%;
+    padding-left:1%;
+    border-radius: 6px ;
+    color:#006bb3;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    font-size: large;
+    padding-top: 30px;
+
+}
+button{
+   margin-bottom:2% ;
+    padding:3px;
+    margin-left: 0%;
+}
+.sixthr{
+    display: flex;
+    margin-top: 2%;
+}
+#vehicle1,#vehicle2{
+    margin-right: 0.5%;
+    margin-left: 2%;
+   
+   
+}
+label{
+    color:#006bb3;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+    font-size: medium;
+}
+
+@media(max-width:800px)
+{
+    .appdet{
+        margin-top: 20%;
+    }
+   
+
+}
+@media(min-width:800px)
+{
+    .
+}
