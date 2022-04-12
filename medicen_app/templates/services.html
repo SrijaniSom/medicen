@@ -1,0 +1,74 @@
+{% load static %}
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/demo.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Londrina+Outline&family=Oxygen&family=Roboto&family=Roboto+Condensed:wght@400;700&family=Roboto+Slab:wght@200&display=swap"
+    rel="stylesheet">
+  <title>Medicen</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+  <link rel="stylesheet" href="{% static 'css/services.css' %}">
+</head>
+
+<body>
+  <header class="cd-header">
+    <div class="cd-header__logo"><a href="#0"><img src="{% static 'assets/care.png' %}" alt="Logo" class="LogoPic"></a></div>
+    <nav class="cd-header__nav js-cd-header__nav">
+      <ul>
+        <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'doctors' %}">Doctors</a></li>
+            <li><a href="{% url 'services' %}">Departments</a></li>
+            {% if request.user.is_authenticated %}
+            <li><a>Hi, {{ request.user.username }}</a></li>
+            <li><a href="{% url 'logoutuser' %}">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'signupdoctor' %}">Doctor</a></li>
+            <li><a href="{% url 'signupuser' %}">Patient</a></li>
+            {% endif %}
+      </ul>
+    </nav>
+  </header>
+<div class="cards">
+
+  {% for i in dept %}
+    <div class="card">
+      <div class="card__image-holder">
+        <img class="card__image" src="{{i.img}}" alt="wave" />
+      </div>
+      <div class="card-title">
+        
+        <h2>
+            {{i.name}}
+            
+        </h2>
+      </div>
+      <div class="card-flap flap1">
+        <div class="card-description">
+          {{i.desc}}
+        </div>
+        
+      </div>
+    </div>
+  {% endfor %}
+  
+  
+  </div>
+ <script src="{% static 'js/main.js' %}"></script>
+ <script src="{% static 'js/services.js' %}"></script>
+</body>
+
+</html>
+  
+  
+  
+  

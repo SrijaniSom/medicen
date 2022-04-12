@@ -1,0 +1,37 @@
+*{
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+}
+.appform{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10%;
+}
+.namepat{
+    width:30%;
+    font-size: medium;
+    border-radius: 5px;
+    padding: 0.5%;
+    margin-bottom: 0.5%;
+}
+.secrow{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+}
+.cate{
+    text-align: left;
+    font-size: small;
+    font-family: 'Roboto Slab', serif;
+    font-size: 130%;
+    font-weight: 800;
+    color:#013a73; 
+    line-height: 1.5;
+}
+.dateinput{
+    margin-left:0.5%;
+}

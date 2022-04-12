@@ -1,0 +1,77 @@
+{% load static %}
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/demo.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Londrina+Outline&family=Oxygen&family=Roboto&family=Roboto+Condensed:wght@400;700&family=Roboto+Slab:wght@200&display=swap"
+        rel="stylesheet">
+    <title>Medicen</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'css/doctor.css' %}">
+    <script src="https://kit.fontawesome.com/66aa7c98b3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="cd-header">
+        <div class="cd-header__logo"><a href="#0"><img src="{% static 'assets/care.png' %}" alt="Logo" class="LogoPic"></a></div>
+        <nav class="cd-header__nav js-cd-header__nav">
+          <ul>
+            <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'doctors' %}">Doctors</a></li>
+                <li><a href="{% url 'services' %}">Departments</a></li>
+                {% if request.user.is_authenticated %}
+                <li><a>Hi, {{ request.user.username }}</a></li>
+                <li><a href="{% url 'logoutuser' %}">Logout</a></li>
+                {% else %}
+                <li><a href="{% url 'signupdoctor' %}">Doctor</a></li>
+                <li><a href="{% url 'signupuser' %}">Patient</a></li>
+                {% endif %}
+          </ul>
+        </nav>
+      </header>
+
+    <div class="setcard">
+
+        {% for i in doc %}
+        <div class="card">
+            <div class="img-bx">
+                <img src="{{i.img}}" alt="img" />
+            </div>
+            <div class="content">
+                <div class="detail">
+                    
+                    <h2>{{ i.doctor.username }}<br /><span style="color:black">{{ i.dept }}</span></h2>
+                    <ul class="sci">
+                        <li>
+                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+
+
+</body>
+
+</html>

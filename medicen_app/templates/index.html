@@ -1,0 +1,255 @@
+{% load static %}
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/demo.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Londrina+Outline&family=Oxygen&family=Roboto&family=Roboto+Condensed:wght@400;700&family=Roboto+Slab:wght@200&display=swap"
+    rel="stylesheet">
+  <title>Medicen</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+</head>
+
+<body>
+  <header class="cd-header">
+    <div class="cd-header__logo"><a href="#0"><img src="{% static 'assets/care.png' %}" alt="Logo" class="LogoPic"></a></div>
+    <nav class="cd-header__nav js-cd-header__nav">
+      <ul>
+        <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'doctors' %}">Doctors</a></li>
+            <li><a href="{% url 'services' %}">Departments</a></li>
+            {% if request.user.is_authenticated %}
+            <li><a>Hi, {{ request.user.username }}</a></li>
+            <li><a href="{% url 'logoutuser' %}">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'signupdoctor' %}">Doctor</a></li>
+            <li><a href="{% url 'signupuser' %}">Patient</a></li>
+            {% endif %}
+      </ul>
+    </nav>
+  </header>
+
+  <section class="cd-hero js-cd-hero js-cd-autoplay">
+    <ul class="cd-hero__slider">
+      <li class="cd-hero__slide cd-hero__slide--selected js-cd-slide">
+        <div class="cd-hero__content cd-hero__content--full-width">
+          <h2>Medicen</h2>
+          <p>A simple one-stop healthcare solution for a better World.</p>
+          <a href="http://codyhouse.co/gem/hero-slider/" class="cd-hero__btn">Book an Appointment</a>
+        </div>
+      </li>
+
+      <li class="cd-hero__slide js-cd-slide">
+        <div class="cd-hero__content cd-hero__content--half-width">
+          <h2>Get to know our doctors,departments.</h2>
+          <p>No need to visit on-site for booking appointments.Schedule your appointment right now!!</p>
+          <a href="#0" class="cd-hero__btn">Start</a>
+          <a href="#0" class="cd-hero__btn cd-hero__btn--secondary">Take demo</a>
+        </div>
+
+        <div class="cd-hero__content cd-hero__content--half-width cd-hero__content--img">
+          <img src="{% static 'assets\tech-1-mobile.jpg' %}" alt="tech 1">
+        </div>
+      </li>
+
+      <li class="cd-hero__slide js-cd-slide">
+        <div class="cd-hero__content cd-hero__content--half-width cd-hero__content--img">
+          <img src="{% static 'assets\pexels-vidal-balielo-jr-1250655.jpg' %}" alt="tech 2">
+        </div>
+
+        <div class="cd-hero__content cd-hero__content--half-width">
+          <h2>Online Electronic health records</h2>
+          <p>No more hazard of having your own physical folder of prescriptions and reports. Find them online
+            anytime and anywhere.</p>
+          <a href="#0" class="cd-hero__btn">Check your records</a>
+          <a href="#0" class="cd-hero__btn cd-hero__btn--secondary">Create account</a>
+        </div>
+
+      </li>
+
+      <li class="cd-hero__slide cd-hero__slide--video js-cd-slide">
+        <div class="cd-hero__content cd-hero__content--full-width">
+          <h2>Get an idea of your medical insurance</h2>
+          <p>With our highly effective ML model, get to know your approximate medical insurance amounts.</p>
+          <a href="#0" class="cd-hero__btn">Learn more</a>
+        </div>
+
+        <div class="cd-hero__content cd-hero__content--bg-video js-cd-bg-video" data-video="assets/video/video">
+
+        </div>
+      </li>
+
+      <li class="cd-hero__slide js-cd-slide">
+        <div class="cd-hero__content cd-hero__content--full-width">
+          <h2>Download our all rounder andropid app</h2>
+          <p>Have a better mental health and fitness level with our android application.</p>
+          <a href="#0" class="cd-hero__btn">Download apk here</a>
+          <a href="#0" class="cd-hero__btn cd-hero__btn--secondary">Learn More</a>
+        </div>
+      </li>
+    </ul>
+
+    <div class="cd-hero__nav js-cd-nav">
+      <nav>
+        <span class="cd-hero__marker cd-hero__marker--item-1 js-cd-marker"></span>
+
+        <ul>
+          <li class="cd-selected"><a href="#0">Intro</a></li>
+          <li><a href="#0">Tech 1</a></li>
+          <li><a href="#0">Tech 2</a></li>
+          <li><a href="#0">Video</a></li>
+          <li><a href="#0">Image</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+
+  <main class="cd-main-content">
+    <div class="mottohead">
+      What is our motto?
+    </div>
+    <div class="mottoexplain">
+      <div class="textm">
+        We recognize that all individuals deserve and have the right to be treated with respect, dignity,
+        sensitivity and compassion. Therefore, we are committed to the following values: Our patients/clients always come
+        first since they are the reasons we exist,We work as a team to ensure high quality performance from all
+        employees, We earn the respect and trust of those we serve and We work and serve the community to the best of our ability.
+      </div>
+    </div>
+
+
+    <div class="Featured">
+
+      <div class="FeaturedHeading">
+
+        Why Choose Us?
+
+      </div>
+
+
+
+      <div class="ReasonList">
+
+        <div class="ReasonEach">
+
+          <div class="iconReason">
+
+            <i class="fa fa-hospital-o" aria-hidden="true"></i>
+
+          </div>
+
+          <div class="headingReason">
+
+            Highly developed infrastructure
+
+
+          </div>
+
+          <div class="textReason">
+
+
+         You can find amzing world-class infrastructure at our heathcare institute.
+
+
+          </div>
+
+        </div>
+
+        <div class="ReasonEach">
+
+          <div class="iconReason">
+
+            <i class="fa fa-users" aria-hidden="true"></i>
+
+          </div>
+
+          <div class="headingReason">
+
+            Expert staff
+
+          </div>
+
+          <div class="textReason">
+
+         Our doctors, nurses and technicians are having years of knowledge and expertise.
+          </div>
+
+        </div>
+
+        <div class="ReasonEach">
+
+          <div class="iconReason">
+
+            <i class="fa fa-clock-o" aria-hidden="true"></i>
+
+          </div>
+
+          <div class="headingReason">
+
+            24/7 Availability
+
+          </div>
+
+          <div class="textReason">
+
+         Your health shouldn't be affected m,erely because of our unavailability. We are open 24/7.
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="vismis">
+      <div class="visdiv">
+        <div class="vistitle"> OUR VISION</div>
+        <div class="vistext"> To become your provider of choice by promoting a culture of clinical excellence, quality
+          customer service,
+          comprehensive care, embracing innovation, and responsiveness to community needs.</div>
+      </div>
+
+      <div class="misdiv">
+        <div class="mistitle"> OUR MISSION</div>
+        <div class="mistext"> To provide high quality, affordable and accessible patient care to our community through
+          operational
+          excellence.</div>
+      </div>
+    </div>
+
+    <div class="wrapper" style="margin-top: 3% ">
+      <div class="title">
+        <h1> Fill up this form.</h1>
+      </div>
+      <form method="POST" action="{% url 'contact' %}">
+        {% csrf_token %}
+      <div class="contact-form">
+        <div class="input-fields">
+          <input type="text" class="input" placeholder="Name">
+          <input type="text" class="input" placeholder="Email Address">
+          <input type="text" class="input" placeholder="Phone">
+          <input type="text" class="input" placeholder="Subject">
+        </div>
+        <div class="msg">
+          <textarea placeholder="Message"></textarea>
+          <button type="submit" class="btn">send</button>
+        </div>
+      </form>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+
+</html>

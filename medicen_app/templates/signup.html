@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    
+    <style>
+      .nav-link{
+        font-size: 1.15rem;
+      }
+      body {
+        font-family: 'Ubuntu', sans-serif;
+      }
+      .list-group-item-imp{
+        background-color: #54a4ff;
+      }
+      .fixed{
+          position: fixed;
+          bottom: 30px;
+          right: 30px;
+          z-index: 10;
+          font-size: 2rem;
+      }
+      h1,h2,label,p{
+        color: #808080;
+      }
+      .form-control{
+        background-color: #ffffff00;
+      }
+    </style>
+    <title>Todo App | Register</title>
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-md navbar-light" style="background: #54a4ff; isolation:isolate;">
+    <a class="navbar-brand" href="{% url 'index' %}">
+         Home
+    </a>
+</nav>
+
+<div class="row justify-content-center mt-5">
+        <div class="col-md-5">
+            <h2>Sign Up</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-5">
+            {% if error %}
+                <div class="alert alert-danger" role="alert">
+                    {{ error }}
+                </div>
+            {% endif %}
+            <form method="POST">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" class="form-control" id="username" aria-describedby="usernameHelp">
+                    <small id="usernameHelp" class="form-text text-muted">Your username must be unique. We'll let you know if someone has taken it already.</small>
+                </div>
+                <div class="form-group">
+                    <label for="password1">Password</label>
+                    <input type="password" name="password1" class="form-control" id="password1">
+                </div>
+                <div class="form-group">
+                    <label for="password2">Confirm Password</label>
+                    <input type="password" name="password2" class="form-control" id="password2">
+                </div>
+                <div class="form-group">
+                    <label for="username">Email</label>
+                    <input type="text" name="email" class="form-control" id="username" aria-describedby="usernameHelp">
+                </div>
+                <div class="form-group">
+                    <label for="username">PhoneNumber</label>
+                    <input type="number" name="phone" class="form-control" id="username" aria-describedby="usernameHelp">
+                </div>
+                <button type="submit" class="btn btn-primary">Sign Up</button>
+            </form>
+            <hr>
+            <div class="text-center">
+                Do you already have an account? <a href="{% url 'loginuser' %}">Login here</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

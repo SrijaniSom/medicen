@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Login</title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg" />
+
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/LineIcons.3.0.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/tiny-slider.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/glightbox.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+</head>
+<body>
+  {% comment %} <header class="cd-header">
+    <div class="cd-header__logo"><a href="#0"><img src="{% static 'assets/care.png' %}" alt="Logo" class="LogoPic"></a></div>
+    <nav class="cd-header__nav js-cd-header__nav">
+      <ul>
+        <li><a href="{% url 'index' %}">Home</a></li>
+            <li><a href="{% url 'doctors' %}">Doctors</a></li>
+            <li><a href="{% url 'services' %}">Departments</a></li>
+            {% if request.user.is_authenticated %}
+            <li><a>Hi, {{ request.user.username }}</a></li>
+            <li><a href="{% url 'logoutuser' %}">Logout</a></li>
+            {% else %}
+            <li><a href="{% url 'signupdoctor' %}">Doctor</a></li>
+            <li><a href="{% url 'signupuser' %}">Patient</a></li>
+            {% endif %}
+      </ul>
+    </nav>
+  </header> {% endcomment %}
+  
+
+
+    <div class="account-login section">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-12">
+              <form class="card login-form" method="POST">
+                {% csrf_token %}
+                <div class="card-body">
+                  <div class="title">
+                    <h3>Login Now</h3>
+                    <!-- <p>You can login using your social media account or email address.</p> -->
+                  </div>
+                 
+                  <div class="form-group input-group">
+                    <label for="reg-fn">Username</label>
+                    <input class="form-control" type="text" name="username" id="reg-email" required>
+                  </div>
+                  <div class="form-group input-group">
+                    <label for="reg-fn">Password</label>
+                    <input class="form-control" type="password" name="password" id="reg-pass" required>
+                  </div>
+                  
+                  <div class="button">
+                    <button class="btn" type="submit">Login</button>
+                  </div>
+                  <p class="outer-link">Don't have an account? <a href="{% url 'signupuser' %}">Register here as a Patient</a>
+                  </p>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+
+
+    
+    
+    </body>
+</html>

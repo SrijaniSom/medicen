@@ -1,0 +1,198 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html class="no-js" lang="zxx">
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <title>Register - ShopGrids Bootstrap 5 eCommerce HTML Template.</title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg" />
+
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+ 
+  <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/demo.css' %}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Londrina+Outline&family=Oxygen&family=Roboto&family=Roboto+Condensed:wght@400;700&family=Roboto+Slab:wght@200&display=swap"
+    rel="stylesheet">
+  <title>Medicen</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+
+
+</head>
+
+<body>
+  <header class="cd-header">
+    <div class="cd-header__logo"><a href="#0"><img src="{% static 'assets/care.png' %}" alt="Logo" class="LogoPic"></a></div>
+    <nav class="cd-header__nav js-cd-header__nav">
+      <ul>
+        <li><a href="{% url 'doctor_index' %}">Home</a></li>
+            <li><a href="{% url 'doctors' %}">Doctors</a></li>
+            <li><a href="{% url 'services' %}">Departments</a></li>
+            {% if request.user.is_authenticated %}
+            <li><a href="{% url 'patient_admin' %}">Admin</a></li>
+            <li><a>Hi, {{ request.user.username }}</a></li>
+            <li><a href="{% url 'logoutuser' %}">Logout</a></li>
+           
+            {% endif %}
+      </ul>
+    </nav>
+  </header>
+ 
+
+  <div class="account-login section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 offset-lg-3 col-md-10 offset-md-1 col-12">
+          <div class="register-form">
+            <div class="title">
+              <h3>Patient Record</h3>
+    
+              <!-- <p>Registration takes less than a minute but gives you full control over your orders.</p> -->
+            </div>
+
+              <h3>Treatment To<h3>
+                <br>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="reg-fn">Patient Name</label>
+                      <input class="form-control" type="text" name="name" id="name" value="{{app.patient}}" disabled>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="form-group">
+                      <label for="reg-ln">Patient's Phone number</label>
+                      <input class="form-control" type="text" name="phone" id="" value="{{app.patient.phone}}" disabled>
+                    </div>
+                  </div>
+                </div>
+                <br>
+                <h3>Treated By</h3>
+                <br>
+      
+              <div class="row">
+                
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="reg-email">Doctor's Name</label>
+                    <input class="form-control" type="text" name="doctor" id="" value="{{app.doctor}}" disabled>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="reg-phone">Department of Treatment</label>
+                    <input class="form-control" type="text" name="dept" id="" value="{{app.doctor.dept}}" disabled>
+                  </div>
+                </div>
+              </div>
+              
+              <br>
+              <h3> Appointment Details </h3>
+              <br>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="reg-pass">Appointment Date</label>
+                    <input class="form-control" type="text" name="date" id="" value="{{app.date}}" disabled>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="form-group">
+                    <label for="reg-pass-confirm">Last Record Updation Date</label>
+                    <input class="form-control" type="text" name="date" id="" value="{{app.last_update}}" disabled>
+                  </div>
+                </div>
+              </div>
+              <br>
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label for="reg-pass-confirm">Description of the Suffering</label>
+                  {% if pre.desc is None %}
+                  <textarea type="text" name="desc" id="" cols="65" disabled style="padding:1%">None</textarea>
+                  <br>
+                  {% else %}
+                  <textarea type="text" name="desc" id="" cols="65" disabled style="padding:1%">{{pre.desc}}</textarea>
+                  <br>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label for="reg-pass-confirm">Prescribed Diet/Mediciens</label>
+                  {% if pre.prescribe is None %}
+                  <textarea type="text" name="prescribe" id="" cols="65" disabled style="padding:1%">None</textarea>
+                  <br>
+                  {% else %}
+                  <textarea type="text" name="prescribe" id="" cols="65" disabled style="padding:1%">{{pre.prescribe}}</textarea>
+                  <br>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label for="reg-pass-confirm">Suggested Scans/Tests</label>
+                  {% if pre.tests is None %}
+                  <textarea type="text" name="tests" id="" cols="65" disabled style="padding:1%">None</textarea>
+                  <br>
+                  {% else %}
+                  <textarea type="text" name="tests" id="" cols="65" disabled style="padding:1%">{{pre.tests}}</textarea>
+                  <br>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="col-sm-12">
+                <div class="form-group">
+                  <label>Reports</label>
+                  
+                </div>
+              </div>
+              
+                <!-- <label for="car">Patient Category </label>
+                <select style="margin-left:10px" name="mycar" id="car">
+                    <option  value="ind" selected>Long-term Patient</option>
+                    <option value="swf">Short-term Patient</option>
+                    >
+                </select> -->
+
+
+              <!-- <div class="button">
+                <button class="btn" type="submit">Choose File</button>
+              </div> -->
+              
+              <!-- <p class="outer-link">Already have an account? <a href="login-hacks.html">Login Now as a doctor</a>
+                <p class="outer-link">Already have an account? <a href="login-hack.html">Login Now as a patient</a>
+              </p> -->
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  
+
+  <a href="#" class="scroll-top">
+    <i class="lni lni-chevron-up"></i>
+  </a>
+
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/tiny-slider.js' %}"></script>
+  <script src="{% static 'js/glightbox.min.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+  <script></script>
+</body>
+
+</html>
