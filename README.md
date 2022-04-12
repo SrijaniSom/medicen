@@ -6,4 +6,5 @@ With our prototype, not only can menial tasks be avoided, but also employment co
 
 ![image](https://user-images.githubusercontent.com/81528176/163020428-5a83beaf-ffaa-4da4-8823-b413ed7c837d.png)
 
-<b> explaining the vision of our solution</b>
+** Explaining the vision of our solution **
+We know how important your healthcare is to you, so our team has been hard at work. We've come up with a one-stop solution that helps with all aspects of your heath and fitness needs.
